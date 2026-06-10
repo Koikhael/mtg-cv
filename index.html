@@ -3,93 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Under Construction</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 40px;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%);
-      color: #f8fafc;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 520px;
-      padding: 32px;
-      margin: auto;
-      border-radius: 24px;
-      background: rgba(15, 23, 42, 0.88);
-      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
-      backdrop-filter: blur(12px);
-    }
-
-    .title {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      letter-spacing: -0.05em;
-    }
-
-    .subtitle {
-      margin: 16px 0 32px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #cbd5e1;
-    }
-
-    .spinner {
-      width: 120px;
-      height: 8px;
-      margin: 0 auto;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.18);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .spinner::before {
-      content: '';
-      position: absolute;
-      left: -40%;
-      top: 0;
-      width: 40%;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, transparent, #60a5fa, #38bdf8, transparent);
-      animation: spin-bar 1.4s ease-in-out infinite;
-    }
-
-    @keyframes spin-bar {
-      0% {
-        left: -40%;
-      }
-      50% {
-        left: 60%;
-      }
-      100% {
-        left: -40%;
-      }
-    }
-
-    .footer {
-      margin-top: 28px;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-  </style>
+  <title>Michael Tigin-Gerber | CV</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">Work In Progress</h1>
-    <p class="subtitle">This site is currently under construction. Please check back soon while we build something great.</p>
-    <div class="spinner" aria-hidden="true"></div>
-    <p class="footer">Michael Tigin-Gerber</p>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">Michael Tigin-Gerber</div>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button">Light mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page" id="top">
+    <!-- Main content -->
+    <main>
+      <section class="hero" id="about">
+        <!-- Hero / About -->
+        <div class="hero-card">
+          <div class="hero-media">
+            <img src="images/miky2.jpg" alt="Michael Tigin-Gerber portrait">
+          </div>
+
+          <div class="hero-content">
+            <span class="eyebrow">DevOps & Infrastructure</span>
+            <h1 class="headline">Hi, I’m Michael</h1>
+            <p class="hero-text">I create infrastructure automation, monitoring, and deployment workflows that help teams ship faster and operate with confidence. This portfolio highlights experience, projects, and contact details in a polished format.</p>
+            <div class="hero-actions">
+              <a class="button" href="#experience">View Experience</a>
+              <a class="button button-muted" href="#projects">See Projects</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience section (includes summary cards + timeline) -->
+      <section class="section" id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="section-grid">
+          <article class="card">
+            <h3>DevOps Expertise</h3>
+            <p>Building automation and resilient infrastructure for modern software delivery. I focus on cloud reliability, observability, and efficient deployment pipelines.</p>
+          </article>
+          <article class="card">
+            <h3>Engineering Operations</h3>
+            <p>Helping teams adopt reliable tooling, configuration-as-code, and incident-ready workflows. I aim to reduce toil while improving system stability.</p>
+          </article>
+        </div>
+
+        <!-- Timeline starts here -->
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">2024 – Present</span>
+            <div class="timeline-card">
+              <h3>Senior DevOps Engineer</h3>
+              <p>Leading infrastructure automation for production environments, building resilient CI/CD pipelines, and enabling rapid deployment of containerized services.</p>
+              <p class="timeline-role">AWS · Terraform · Kubernetes · GitHub Actions · Prometheus</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2021 – 2024</span>
+            <div class="timeline-card">
+              <h3>Platform Engineer</h3>
+              <p>Designed platform tooling that reduced deployment lead time, supported microservices adoption, and improved runtime observability across teams.</p>
+              <p class="timeline-role">Azure · Docker · Helm · Terraform · ELK</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2019 – 2021</span>
+            <div class="timeline-card">
+              <h3>Infrastructure Specialist</h3>
+              <p>Built automated infrastructure and monitoring stacks for high-availability workloads, focusing on security and performance optimization.</p>
+              <p class="timeline-role">Linux · Bash · CI/CD · Monitoring · Incident Response</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h4>Portfolio & CV Site</h4>
+              <span class="project-date">2026</span>
+            </div>
+            <p>Responsive personal website with theme toggle, animated sections, and design built around your CV and project highlights.</p>
+            <a href="#contact">Contact me</a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h4>Deployment Pipeline</h4>
+              <span class="project-date">2025</span>
+            </div>
+            <p>Built a fully automated deployment flow using GitHub Actions, Terraform, and Kubernetes to shrink delivery time and improve rollback confidence.</p>
+            <a href="#experience">See experience</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h4>Reach out</h4>
+            <p>If you’d like to collaborate on a project, review my CV, or discuss opportunities, I’m happy to connect.</p>
+            <p class="contact-detail"><strong>Email</strong><br><a href="mailto:michael@example.com">michael@example.com</a></p>
+            <p class="contact-detail"><strong>Location</strong><br>Remote / Flexible</p>
+          </div>
+
+          <div class="contact-card contact-cta">
+            <div>
+              <h4>Quick stats</h4>
+              <p class="contact-detail">5+ years experience, 12+ shipped projects, and a passion for modern product design.</p>
+            </div>
+            <a class="button" href="mailto:michael@example.com">Send a message</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="divider"></div>
+    <!-- Footer -->
+    <footer>Built with a modern one-page layout, ready for your CV content.</footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
