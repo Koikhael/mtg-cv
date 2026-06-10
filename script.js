@@ -49,3 +49,33 @@ window.addEventListener('scroll', () => {
 });
 
 updateHeroGradientPosition();
+
+// --- Hobbies carousel: continuous scroll initializer ---
+const initHobbiesCarousel = () => {
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  // make sure there are items
+  const items = Array.from(track.children);
+  if (items.length === 0) return;
+
+  // duplicate items to allow seamless scrolling
+  items.forEach(node => track.appendChild(node.cloneNode(true)));
+
+  let pos = 0;
+  const speed = 0.16; // pixels per frame; lower = slower
+  const step = () => {
+    pos += speed;
+    const half = track.scrollWidth / 2;
+    if (pos >= half) pos = 0;
+    track.style.transform = `translateX(${-pos}px)`;
+    requestAnimationFrame(step);
+  };
+
+  // start animation once images are likely loaded
+  window.requestAnimationFrame(step);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHobbiesCarousel();
+});
